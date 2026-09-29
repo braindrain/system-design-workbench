@@ -70,7 +70,7 @@ mkdir -p "$HOME/.diagram-design/profiles"
 <!-- diagram-design-profile
 name: Design workbench (Dracula)
 slug: workbench-dracula
-source-url: https://github.com/braindrain/system-design-framework
+source-url: https://github.com/braindrain/system-design-workbench
 created: $(date +%F)
 updated: $(date +%F)
 notes: Written by scripts/setup-design-workbench.sh; re-run it to refresh

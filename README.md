@@ -57,8 +57,8 @@ with the skills each one uses.
 and npm.
 
 ```bash
-git clone https://github.com/braindrain/system-design-framework.git
-cd system-design-framework
+git clone https://github.com/braindrain/system-design-workbench.git
+cd system-design-workbench
 bash scripts/setup-design-workbench.sh .     # or: bash scripts/setup-design-workbench.sh ~/my-design
 ```
 
