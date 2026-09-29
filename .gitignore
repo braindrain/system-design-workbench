@@ -1,0 +1,6 @@
+deck/node_modules/
+deck/dist/
+deck/png/
+refs/
+CLAUDE.md.bak.*
+.DS_Store

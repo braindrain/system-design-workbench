@@ -1,0 +1,12 @@
+{
+  "enabledPlugins": {
+    "system-design-skills@system-design-skills": true,
+    "evals@ai-evals-course": true,
+    "claude-api@anthropic-agent-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "mcp-server-dev@claude-plugins-official": true,
+    "backend-development@claude-code-workflows": true,
+    "llm-application-dev@claude-code-workflows": true,
+    "diagram-design@diagram-design": true
+  }
+}

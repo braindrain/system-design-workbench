@@ -1,0 +1,18 @@
+{
+  "name": "design-deck",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "export": "slidev export --output design.pdf",
+    "export:pptx": "slidev export --format pptx-editable --output design.pptx",
+    "export:png": "slidev export --format png --output png"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/types": "^53.0.0",
+    "@vue/compiler-sfc": "^3.5.43",
+    "playwright-chromium": "^1.63.0",
+    "slidev-theme-dracula": "^0.2.5"
+  }
+}
