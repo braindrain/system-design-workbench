@@ -30,13 +30,7 @@ friction a real design review has:
 
 ## Workflow
 
-```text
-brief.md ─► /iter-0-frame ─► /iter-1-backbone ─► /iter-2-knowledge ─► /iter-3-ai
-                                                                          │
-   /qa-drill ◄─ /deck ◄─ /diagrams ◄─ /iter-5-redteam ◄─ /iter-4-decisions ◄┘
-
-   after each iteration: review the diff, then /checkpoint <n>      any time: /overview
-```
+![Workflow: brief.md runs through six design iterations (frame, backbone, knowledge layer, AI layer, decisions, red team), each followed by your review and /checkpoint, then /diagrams, /deck and /qa-drill; /overview can run at any time](docs/assets/workflow.png)
 
 | Command | What it does | Writes | Exit check |
 |---|---|---|---|

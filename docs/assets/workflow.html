@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workbench workflow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #282A36;
+      --color-ink:     #F8F8F2;
+      --color-muted:   #A4ADCB;
+      --color-accent:  #FF79C6;
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 960px; display: block; }
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Flowchart · Diagram Design</p>
+    <h1>From brief to rehearsed talk</h1>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 960 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="workflow-title workflow-desc">
+        <title id="workflow-title">From brief to rehearsed talk</title>
+        <desc id="workflow-desc">The workbench commands in order: six design iterations from framing to red team, then diagrams, the deck and a Q&amp;A drill, with a human review and checkpoint after each iteration.</desc>
+        <defs>
+          <marker id="workflow-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#A4ADCB"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#282A36"/>
+
+        <!-- Arrows (drawn first, behind nodes and gates) -->
+        <!-- brief.md → Frame -->
+        <line x1="16" y1="86" x2="72" y2="86" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <!-- Row 1, left to right -->
+        <line x1="204" y1="86" x2="252" y2="86" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <line x1="384" y1="86" x2="432" y2="86" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <line x1="564" y1="86" x2="612" y2="86" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <line x1="744" y1="86" x2="792" y2="86" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <!-- Decisions ↓ Red team -->
+        <line x1="858" y1="124" x2="858" y2="196" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <!-- Row 2, right to left -->
+        <line x1="792" y1="234" x2="744" y2="234" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <line x1="612" y1="234" x2="564" y2="234" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <line x1="432" y1="234" x2="384" y2="234" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+
+        <!-- Entry label -->
+        <rect x="18" y="66" width="52" height="12" rx="2" fill="#282A36"/>
+        <text x="44" y="75" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">BRIEF.MD</text>
+
+        <!-- Review + checkpoint gates (accent): one after each iteration -->
+        <g stroke="#FF79C6" stroke-width="1.2">
+          <path d="M224 80 L230 86 L224 92 L218 86 Z" fill="#282A36"/>
+          <path d="M404 80 L410 86 L404 92 L398 86 Z" fill="#282A36"/>
+          <path d="M584 80 L590 86 L584 92 L578 86 Z" fill="#282A36"/>
+          <path d="M764 80 L770 86 L764 92 L758 86 Z" fill="#282A36"/>
+          <path d="M858 154 L864 160 L858 166 L852 160 Z" fill="#282A36"/>
+          <path d="M772 228 L778 234 L772 240 L766 234 Z" fill="#282A36"/>
+        </g>
+        <g fill="rgba(255,121,198,0.35)">
+          <path d="M224 80 L230 86 L224 92 L218 86 Z"/>
+          <path d="M404 80 L410 86 L404 92 L398 86 Z"/>
+          <path d="M584 80 L590 86 L584 92 L578 86 Z"/>
+          <path d="M764 80 L770 86 L764 92 L758 86 Z"/>
+          <path d="M858 154 L864 160 L858 166 L852 160 Z"/>
+          <path d="M772 228 L778 234 L772 240 L766 234 Z"/>
+        </g>
+
+        <!-- Command nodes: tag · name · command · file it writes -->
+        <g font-family="'Geist', sans-serif">
+          <!-- Row 1 -->
+          <rect x="72" y="48" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="82" y="58" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="104" y="67" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 0</text>
+          <text x="82" y="92" fill="#F8F8F2" font-size="12" font-weight="600">Frame</text>
+          <text x="82" y="106" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-0-frame</text>
+          <text x="82" y="117" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">01-framing.md</text>
+
+          <rect x="252" y="48" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="262" y="58" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="284" y="67" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 1</text>
+          <text x="262" y="92" fill="#F8F8F2" font-size="12" font-weight="600">Backbone</text>
+          <text x="262" y="106" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-1-backbone</text>
+          <text x="262" y="117" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">02-backbone.md</text>
+
+          <rect x="432" y="48" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="442" y="58" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="464" y="67" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 2</text>
+          <text x="442" y="92" fill="#F8F8F2" font-size="12" font-weight="600">Knowledge layer</text>
+          <text x="442" y="106" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-2-knowledge</text>
+          <text x="442" y="117" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">03-knowledge-layer.md</text>
+
+          <rect x="612" y="48" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="622" y="58" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="644" y="67" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 3</text>
+          <text x="622" y="92" fill="#F8F8F2" font-size="12" font-weight="600">AI layer</text>
+          <text x="622" y="106" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-3-ai</text>
+          <text x="622" y="117" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">04-ai-layer.md</text>
+
+          <rect x="792" y="48" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="802" y="58" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="824" y="67" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 4</text>
+          <text x="802" y="92" fill="#F8F8F2" font-size="12" font-weight="600">Decisions</text>
+          <text x="802" y="106" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-4-decisions</text>
+          <text x="802" y="117" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">ADRs, 05-delivery-plan</text>
+
+          <!-- Row 2 (right to left) -->
+          <rect x="792" y="196" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="802" y="206" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="824" y="215" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">ITER 5</text>
+          <text x="802" y="240" fill="#F8F8F2" font-size="12" font-weight="600">Red team</text>
+          <text x="802" y="254" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/iter-5-redteam</text>
+          <text x="802" y="265" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">06-red-team.md</text>
+
+          <rect x="612" y="196" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="622" y="206" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="644" y="215" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">TALK</text>
+          <text x="622" y="240" fill="#F8F8F2" font-size="12" font-weight="600">Diagrams</text>
+          <text x="622" y="254" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/diagrams</text>
+          <text x="622" y="265" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">diagrams/*.png</text>
+
+          <rect x="432" y="196" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="442" y="206" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="464" y="215" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">TALK</text>
+          <text x="442" y="240" fill="#F8F8F2" font-size="12" font-weight="600">Deck</text>
+          <text x="442" y="254" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/deck</text>
+          <text x="442" y="265" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">slides.md, PDF, PPTX</text>
+
+          <rect x="252" y="196" width="132" height="76" rx="6" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+          <rect x="262" y="206" width="44" height="12" rx="2" fill="none" stroke="rgba(248,248,242,0.30)" stroke-width="0.8"/>
+          <text x="284" y="215" fill="#A4ADCB" font-size="7" font-weight="500" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.18em">TALK</text>
+          <text x="262" y="240" fill="#F8F8F2" font-size="12" font-weight="600">Q&amp;A drill</text>
+          <text x="262" y="254" fill="#F8F8F2" font-size="9" font-family="'Geist Mono', monospace">/qa-drill</text>
+          <text x="262" y="265" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace">scores weak answers</text>
+        </g>
+
+        <!-- Callout: /overview runs outside the sequence -->
+        <g font-family="'Instrument Serif', 'Noto Serif', serif" font-style="italic" font-size="14" fill="#A4ADCB">
+          <text x="72" y="222">Any time, /overview</text>
+          <text x="72" y="240">rewrites the one-page</text>
+          <text x="72" y="258">design README.</text>
+        </g>
+
+        <!-- Legend -->
+        <line x1="24" y1="300" x2="936" y2="300" stroke="rgba(248,248,242,0.12)" stroke-width="0.8"/>
+        <text x="24" y="318" fill="#A4ADCB" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
+
+        <rect x="24" y="328" width="24" height="12" rx="2" fill="#44475A" stroke="#F8F8F2" stroke-width="1"/>
+        <text x="56" y="337" fill="#A4ADCB" font-size="9" font-family="'Geist', sans-serif">Command you run, and the file it writes</text>
+
+        <path d="M292 328 L298 334 L292 340 L286 334 Z" fill="rgba(255,121,198,0.35)" stroke="#FF79C6" stroke-width="1.2"/>
+        <text x="306" y="337" fill="#A4ADCB" font-size="9" font-family="'Geist', sans-serif">You review the diff, then /checkpoint &lt;n&gt; commits, tags iter-&lt;n&gt; and pushes</text>
+
+        <line x1="724" y1="334" x2="752" y2="334" stroke="#A4ADCB" stroke-width="1.2" marker-end="url(#workflow-arrow)"/>
+        <text x="760" y="337" fill="#A4ADCB" font-size="9" font-family="'Geist', sans-serif">Next command</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
